@@ -1,0 +1,38 @@
+<div *ngIf="isLoad;else cargandoInfo"
+    class="bg-warning contenedor">
+    
+    <!-- imagen -->
+   <!--  <shared-lazy-image
+     [url]="imageUrl"
+     alt="No name"
+    > -->
+    <lazy-image
+        class="imagecss"
+        [url]="imageUrl"
+        alt="No name"
+        >
+    </lazy-image>
+
+    <!-- </shared-lazy-image> -->
+    
+    <!-- col 2 -->
+    
+    <div class="col2">
+        <div class="mb-5">
+            <h4>{{pregunta}}</h4>
+        </div>
+        <div class="mb-5">
+            <h5>{{respuesta}}</h5>
+        </div>
+        <div>
+            <button (click)="obtenerInfo()"
+                class="btn btn-outline-dark">{{segundoRestantes}} seconds.</button>
+        </div>
+        
+    </div>
+
+</div>
+
+<ng-template #cargandoInfo>
+    <p>Cargando info ...</p>
+</ng-template>
